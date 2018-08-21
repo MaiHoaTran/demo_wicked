@@ -1,0 +1,34 @@
+<h2>Personal Information</h2>
+<%= form_for current_user, url: wizard_path do |f| %>
+  <% if f.object.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        <%= t "shared.error_messages", count: f.object.errors.size %>.
+      </div>
+      <ul>
+      <% f.object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook %>
+  </div>
+
+  <div class="field">
+    <%= f.label :youtube %><br />
+    <%= f.text_field :youtube %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skype %><br />
+    <%= f.text_field :skype %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Finish", class: "btn btn-primary" %>
+    <%= link_to "Back", previous_wizard_path, class: "btn btn-primary" %>
+  </div>
+<% end %>

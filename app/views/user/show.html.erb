@@ -1,0 +1,23 @@
+<h4>Personal Information:</h4>
+<% if current_user.name.present? %>
+  Name: <%= current_user.name %><br>
+<% end %>
+<% if current_user.email.present? %>
+  Email: <%= current_user.email %><br>
+<% end %>
+<% if current_user.address.present? %>
+  Address: <%= current_user.address %><br>
+<% end %>
+<% if current_user.birthday.present? %>
+  Birthday: <%= current_user.birthday %><br>
+<% end %>
+<h4>Social Information</h4>
+<% if current_user.facebook.present? %>
+  Facebook: <%= current_user.facebook %><br>
+<% end %>
+<% if current_user.youtube.present? %>
+  Youtube: <%= current_user.youtube %><br>
+<% end %>
+<% if current_user.skype.present? %>
+  Skype: <%= current_user.skype %><br>
+<% end %>
